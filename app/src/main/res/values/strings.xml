@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">severalActivities</string>
+
+    <string name="TextView">TextView</string>
+    <string name="TextView2">TextView</string>
+
+    <string name="button_openDialog">open dialog</string>
+    <string name="button_exitApp">exit app</string>
+
+    <string name="button_ok">OK</string>
+    <string name="button_cancel">Cancel</string>
+
+    <string name="cb1">first</string>
+    <string name="cb2">second</string>
+</resources>
