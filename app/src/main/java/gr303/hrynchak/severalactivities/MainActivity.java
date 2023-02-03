@@ -1,17 +1,22 @@
 package gr303.hrynchak.severalactivities;
 
+import static android.app.PendingIntent.getActivity;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -64,7 +69,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ExitApp_OnClick(View v) {
-        //ToDo LayoutInflater
-        finish();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View view = getLayoutInflater().inflate(R.layout.my_dialog, null);
+        builder.setView(view);
+
+        TextView title = view.findViewById(R.id.textView_title);
+        title.setText(R.string.dialogTitle);
+        TextView content = view.findViewById(R.id.textView_content);
+        content.setText(R.string.dialogContent);
+
+        AlertDialog dialog = builder.show();
+
+        Button btnOk = view.findViewById(R.id.dialogBtn_ok);
+        btnOk.setText(R.string.dialogPositive);
+        btnOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+        Button btnCancel = view.findViewById(R.id.dialogBtn_cancel);
+        btnCancel.setText(R.string.dialogNegative);
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
     }
 }
