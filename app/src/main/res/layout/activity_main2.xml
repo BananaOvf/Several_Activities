@@ -7,6 +7,14 @@
     android:orientation="vertical"
     tools:context=".MainActivity2">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Author"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
     <EditText
         android:id="@+id/editText2"
         android:layout_width="match_parent"

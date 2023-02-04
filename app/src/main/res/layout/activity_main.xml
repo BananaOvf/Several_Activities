@@ -7,6 +7,14 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Author"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
     <EditText
         android:id="@+id/editText"
         android:layout_width="match_parent"
@@ -56,5 +64,12 @@
             android:onClick="ExitApp_OnClick"
             android:text="@string/button_exitApp" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button_openRealDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Open real dialog"
+        android:onClick="OpenRealDialog_OnClick"/>
 
 </LinearLayout>

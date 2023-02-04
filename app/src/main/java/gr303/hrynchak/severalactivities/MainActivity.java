@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,6 +49,45 @@ public class MainActivity extends AppCompatActivity {
         i.putExtra("cb2", state2);
 
         startActivityForResult(i, 555);
+    }
+
+    public void OpenRealDialog_OnClick(View v) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View tview = getLayoutInflater().inflate(R.layout.activity_main2, null);
+        builder.setView(tview);
+
+        AlertDialog dialog = builder.show();
+
+        EditText string = tview.findViewById(R.id.editText2);
+        Switch switch1 = tview.findViewById(R.id.switch_1);
+        Switch switch2 = tview.findViewById(R.id.switch_2);
+
+        string.setText(txt.getText().toString());
+        switch1.setChecked(chk1.isChecked());
+        switch2.setChecked(chk2.isChecked());
+
+        Button btnOk = tview.findViewById(R.id.button_ok);
+        btnOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText string = tview.findViewById(R.id.editText2);
+                Switch switch1 = tview.findViewById(R.id.switch_1);
+                Switch switch2 = tview.findViewById(R.id.switch_2);
+
+                txt.setText(string.getText().toString());
+                chk1.setChecked(switch1.isChecked());
+                chk2.setChecked(switch2.isChecked());
+
+                dialog.dismiss();
+            }
+        });
+        Button btnCancel = tview.findViewById(R.id.button_cancel);
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
     }
 
     @Override

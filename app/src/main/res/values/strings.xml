@@ -17,4 +17,6 @@
     <string name="dialogContent">Are you sure you want to exit?</string>
     <string name="dialogPositive">Yes</string>
     <string name="dialogNegative">No, return</string>
+
+    <string name="Author">Arsenii Hrynchak 303</string>
 </resources>
